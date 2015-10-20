@@ -2,6 +2,9 @@ package net.apispark.webapi;
 
 import net.apispark.webapi.db.ContactPersistence;
 import net.apispark.webapi.representation.Contact;
+
+import java.util.Date;
+
 import org.restlet.Component;
 import org.restlet.data.LocalReference;
 import org.restlet.data.Protocol;
@@ -53,8 +56,9 @@ public class WebApiMain {
         SLF4JBridgeHandler.install();
     }
 
-    private static void preloadData() {
-        ContactPersistence.INSTANCE.addContact(new Contact("41ee2e80-75bf-11e5-b476-cbcba715b961", "John", "Smith", "svg-1"));
-        ContactPersistence.INSTANCE.addContact(new Contact("41ee5590-75bf-11e5-b476-cbcba715b961", "Brenda", "Jones", "svg-6"));
+    @SuppressWarnings("deprecation")
+	private static void preloadData() {
+        ContactPersistence.INSTANCE.addContact(new Contact("41ee2e80-75bf-11e5-b476-cbcba715b961", "John", "Smith", "svg-1", new Date(1995, 11, 12)));
+        ContactPersistence.INSTANCE.addContact(new Contact("41ee5590-75bf-11e5-b476-cbcba715b961", "Brenda", "Jones", "svg-6", new Date(1995, 11, 12)));
     }
 }

@@ -71,7 +71,8 @@
             <div class="wrap-avatar">
               <md-icon md-svg-icon="{{ contact.avatar }}" class="avatar"></md-icon>
             </div>
-            <span>{{ contact.firstName }} {{ contact.lastName }}</span>
+            <span>{{ contact.firstName }} {{ contact.lastName}}</span>
+            
 
           </md-button>
         </md-item>
@@ -110,6 +111,18 @@
             <div ng-message="required">This is required!</div>
           </div>
         </md-input-container>
+        
+        <!-- ESSAI -->
+        <md-input-container>
+          <label>Birthday</label>
+          <input name="birthday"
+                 ng-model="cc.copyContact.birthday"
+                 required>
+
+          <div ng-messages="contactForm.birthday.$error" ng-show="contactForm.birthday.$dirty">
+            <div ng-message="required">This is required!</div>
+          </div>
+        </md-input-container>
 
         <md-input-container>
           <label>Avatar</label>
@@ -122,6 +135,8 @@
             </md-option>
           </md-select>
         </md-input-container>
+        
+   
 
         <section layout="row" layout-align="left center" style="margin-top: 40px;">
 
