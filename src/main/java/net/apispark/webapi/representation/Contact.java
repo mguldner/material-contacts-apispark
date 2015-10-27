@@ -12,19 +12,19 @@ public class Contact implements Serializable {
     private String firstName;
     private String lastName;
     private String avatar;
-    private Date birthday;
+    private boolean gender;
     private Boolean active;
     private Integer rank;
     private String companyId;
 
     public Contact(){}
 
-    public Contact(String id, String firstName, String lastName, String avatar, Date birthday) {
+    public Contact(String id, String firstName, String lastName, String avatar) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.avatar = avatar;
-        this.birthday = birthday;
+        this.gender = true;
     }
 
     public String getId() {
@@ -59,15 +59,6 @@ public class Contact implements Serializable {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
-    }
-
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
     }
 
     public Boolean getActive() {
